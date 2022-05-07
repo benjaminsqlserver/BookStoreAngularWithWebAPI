@@ -1,0 +1,36 @@
+{
+  "cssFiles": [],
+  "dataSources": [
+    "Models"
+  ],
+  "generator": "@radzen/angular-generator",
+  "https": false,
+  "ignore": [
+    "\\client\\src\\app\\edit-book\\edit-book-generated.component.ts"
+  ],
+  "javaScriptFiles": [],
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "BookStoreSPA",
+  "namespaces": [],
+  "navigation": [
+    "Book"
+  ],
+  "pages": [
+    "Book",
+    "Add Book",
+    "Edit Book",
+    "Redirect1"
+  ],
+  "port": 8000,
+  "serverLang": "cs",
+  "serverPort": 5000,
+  "serverProject": false,
+  "serverVersion": "6",
+  "startPage": "Book",
+  "theme": "default",
+  "title": "BookStoreSPA"
+}

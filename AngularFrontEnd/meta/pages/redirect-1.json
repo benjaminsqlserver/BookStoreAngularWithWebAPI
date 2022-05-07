@@ -1,0 +1,19 @@
+{
+  "components": [
+    {
+      "components": [],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "path": "book",
+        "type": "navigate"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Redirect1"
+}

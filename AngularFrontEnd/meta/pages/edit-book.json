@@ -1,0 +1,423 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "name",
+                              "name": "nameLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Name",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "name",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${book.name}"
+                            },
+                            {
+                              "component": "name",
+                              "name": "nameRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "name is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "author",
+                              "name": "authorLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Author",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "author",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${book.author}"
+                            },
+                            {
+                              "component": "author",
+                              "name": "authorRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "author is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "description",
+                              "name": "descriptionLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Description",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "description",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${book.description}"
+                            },
+                            {
+                              "component": "description",
+                              "name": "descriptionRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "description is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "value",
+                              "name": "valueLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Value",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxText": "cannot be more than",
+                              "minText": "cannot be less than",
+                              "name": "value",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${book.value}"
+                            },
+                            {
+                              "component": "value",
+                              "name": "valueRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "value is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "publishDate",
+                              "name": "publishDateLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Publish Date",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "name": "publishDate",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "datepicker",
+                              "value": "${book.publishDate}"
+                            },
+                            {
+                              "component": "publishDate",
+                              "name": "publishDateRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "publishDate is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "categoryId",
+                              "name": "categoryIdLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Category",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "allowClear": true,
+                              "allowFiltering": true,
+                              "data": "${getApiCategoriesResult}",
+                              "name": "categoryId",
+                              "placeholder": "Select Category",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "textProperty": "name",
+                              "type": "dropdown",
+                              "value": "${book.categoryId}",
+                              "valueProperty": "id",
+                              "multipleItemsSelectedText": "{0} items selected",
+                              "emptyFilterText": "No results found"
+                            },
+                            {
+                              "component": "categoryId",
+                              "name": "requiredValidator0",
+                              "text": "Category is required!",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "back"
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update Book",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "Models.putApiBooksId",
+                        "parameters": [
+                          {
+                            "name": "id",
+                            "value": "${parameters.id}"
+                          },
+                          {
+                            "name": "body",
+                            "value": "${parameters.body}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "detail": "Book Has Been Updated Successfully!",
+                            "duration": 7000,
+                            "severity": "success",
+                            "summary": "Book Update Success",
+                            "type": "notify"
+                          },
+                          {
+                            "path": "redirect-1",
+                            "type": "navigate"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "name": "form0",
+                  "type": "template-form"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "Models.getApiCategories",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getApiCategoriesResult",
+            "type": "set",
+            "value": "${result}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "error": [],
+        "name": "Models.getApiBooksId",
+        "parameters": [
+          {
+            "name": "id",
+            "value": "${parameters.id}"
+          }
+        ],
+        "then": [
+          {
+            "name": "book",
+            "type": "set",
+            "value": "${result}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Edit Book"
+}

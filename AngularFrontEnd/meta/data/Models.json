@@ -1,0 +1,362 @@
+{
+  "info": {
+    "title": "Models",
+    "x-origin": "https://localhost:7004/swagger/v1/swagger.json",
+    "x-withCredentials": false,
+    "version": "1.0",
+    "x-type": "swagger"
+  },
+  "host": "localhost:7004",
+  "basePath": "",
+  "definitions": {
+    "Book": {
+      "required": [
+        "author",
+        "categoryId",
+        "description",
+        "name",
+        "publishDate",
+        "value"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "x-key": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number",
+          "format": "double"
+        },
+        "publishDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "categoryId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "category": {
+          "$ref": "#/definitions/Category"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Category": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "x-key": true
+        },
+        "books": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Book"
+          },
+          "x-nullable": true
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "paths": {
+    "/api/Books": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "getApiBooks"
+      },
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "postApiBooks"
+      }
+    },
+    "/api/Books/{id}": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        },
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "getApiBooksId"
+      },
+      "put": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "putApiBooksId"
+      },
+      "delete": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "deleteApiBooksId"
+      }
+    },
+    "/api/Categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Category"
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "getApiCategories"
+      },
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        ],
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "postApiCategories"
+      }
+    },
+    "/api/Categories/{id}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        },
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "getApiCategoriesId"
+      },
+      "put": {
+        "tags": [
+          "Categories"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "operationId": "putApiCategoriesId"
+      },
+      "delete": {
+        "tags": [
+          "Categories"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "format": "int32",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "deleteApiCategoriesId"
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "swagger": "2.0"
+}

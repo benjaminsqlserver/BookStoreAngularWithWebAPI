@@ -1,0 +1,88 @@
+<rz-content #content1 container="main">
+  <div class="row">
+    <div class="col-md-12">
+      <rz-template-form #form0 (submit)="form0Submit($event)">
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #nameLabel component="name" [style]="{'width': '100%'}" text="Name">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #name [style]="{'display': 'block', 'width': '100%'}" [(ngModel)]="book && book.name" name="name">
+            </rz-textbox>
+            <rz-required-validator #nameRequiredValidator [component]="name" [style]="{'position': 'absolute'}" text="name is required">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #authorLabel component="author" [style]="{'width': '100%'}" text="Author">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #author [style]="{'display': 'block', 'width': '100%'}" [(ngModel)]="book && book.author" name="author">
+            </rz-textbox>
+            <rz-required-validator #authorRequiredValidator [component]="author" [style]="{'position': 'absolute'}" text="author is required">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #descriptionLabel component="description" [style]="{'width': '100%'}" text="Description">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #description [style]="{'display': 'block', 'width': '100%'}" [(ngModel)]="book && book.description" name="description">
+            </rz-textbox>
+            <rz-required-validator #descriptionRequiredValidator [component]="description" [style]="{'position': 'absolute'}" text="description is required">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #valueLabel component="value" [style]="{'width': '100%'}" text="Value">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-numeric #value maxText="cannot be more than" minText="cannot be less than" [style]="{'display': 'block', 'width': '100%'}" [(ngModel)]="book && book.value" name="value">
+            </rz-numeric>
+            <rz-required-validator #valueRequiredValidator [component]="value" [style]="{'position': 'absolute'}" text="value is required">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #publishDateLabel component="publishDate" [style]="{'width': '100%'}" text="Publish Date">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-datepicker #publishDate [style]="{'display': 'block', 'width': '100%'}" [(ngModel)]="book && book.publishDate" name="publishDate">
+            </rz-datepicker>
+            <rz-required-validator #publishDateRequiredValidator [component]="publishDate" [style]="{'position': 'absolute'}" text="publishDate is required">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #categoryIdLabel component="categoryId" [style]="{'width': '100%'}" text="Category">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-dropdown #categoryId [allowClear]="true" [allowFiltering]="true" [data]="getApiCategoriesResult" placeholder="Select Category" [style]="{'width': '100%'}" textProperty="name" [(ngModel)]="book && book.categoryId" valueProperty="id" multipleItemsSelectedText="{0} items selected" emptyFilterText="No results found" name="categoryId">
+            </rz-dropdown>
+            <rz-required-validator #requiredValidator0 [component]="categoryId" text="Category is required!">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col offset-sm-3">
+            <rz-button #button1 buttonStyle="primary" buttonType="submit" icon="save" text="Save">
+            </rz-button>
+            <rz-button #button2 buttonStyle="light" [style]="{'marginLeft': '1rem'}" text="Cancel" (click)="button2Click($event)">
+            </rz-button>
+          </div>
+        </div>
+      </rz-template-form>
+    </div>
+  </div>
+</rz-content>
